@@ -1,36 +1,18 @@
-// DOUBT (DONE (BY ME ONLY))
-
 class Solution {
 public:
     int bitwiseComplement(int n) {
+        
         if (n == 0) {
             return 1;
         }
-        else {
-            int count = 0;
+        int m = n, mask = 0;
         
-            int temp = n;
-            
-            while (temp != 0) {
-                count++;
-                temp >>= 1;
-            }
-            
-            temp = n;
-        
-            for (int i=0; i<count; i++) {
-                int powerOfTwo = pow(2, i);
-                
-                if (!(temp & 1)) {
-                    n = n | powerOfTwo;
-                }
-                else {
-                    n = n ^ powerOfTwo;
-                }
-                
-                temp = temp >> 1;
-            }
-            return n;
+        while (m != 0) {
+            mask = (mask << 1) | 1;
+            m = m >> 1;
         }
+        
+        int ans = (~n) & mask;
+        return ans;
     }
 };
