@@ -5,13 +5,15 @@ int findDuplicate(vector<int> &arr)
 {
     int n = arr.size();
     
-    int expectedSum = (n*(n+1))/2, originalSum = 0;
+    int ans = 0;
     
     for (int i=0; i<n; i++) {
-        originalSum += arr[i];
+        ans = (ans ^ arr[i]);
     }
     
-    int ans = n - (expectedSum - originalSum);
+    for (int i=1; i<n; i++) {
+        ans = (ans ^ i);
+    }
     
     return ans;
 }
