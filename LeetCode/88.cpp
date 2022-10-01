@@ -6,24 +6,19 @@ public:
 
         while (a < m || b < n) {
             if (b >= n) {
-                ans.push_back(nums1[a]);
-                a++;
+                ans.push_back(nums1[a++]);
             }
             else if (a >= m) {
-                ans.push_back(nums2[b]);
-                b++;
+                ans.push_back(nums2[b++]);
             }
             else if (nums1[a] < nums2[b]) {
-                ans.push_back(nums1[a]);
-                a++;
+                ans.push_back(nums1[a++]);
             }
             else if (nums1[a] > nums2[b]) {
-                ans.push_back(nums2[b]);
-                b++;
+                ans.push_back(nums2[b++]);
             }
             else {
-                ans.push_back(nums1[a]);
-                a++;
+                ans.push_back(nums1[a++]);
             }
         }
         nums1 = ans;
