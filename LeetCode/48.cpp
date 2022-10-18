@@ -10,7 +10,7 @@ public:
             }
         }
 
-        // STEP 2: 
+        // STEP 2: Taking Transpose
         for (int i=0; i<n; i++) {
             for (int j=i; j<n; j++) {
                 swap(matrix[i][j], matrix[j][i]);
